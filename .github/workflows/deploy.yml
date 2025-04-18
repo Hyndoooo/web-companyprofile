@@ -20,30 +20,26 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 64000
         script: |
-          # Buat direktori utama cicd jika belum ada
           if [ ! -d "/var/www/html/cicd" ]; then
             mkdir -p /var/www/html/cicd
           fi
 
-          # Buat direktori khusus untuk aldo jika belum ada
           if [ ! -d "/var/www/html/cicd/aldo" ]; then
             mkdir -p /var/www/html/cicd/aldo
           fi
 
-          # Masuk ke folder aldo
           cd /var/www/html/cicd/aldo
 
-          # Jika belum terhubung git, clone repo-nya
           if [ ! -d ".git" ]; then
             git clone https://github.com/${{ github.repository }}.git .
           else
             git pull origin main
           fi
 
-          # Salin home.html sebagai index.html agar bisa diakses otomatis dari root folder
+          # Salin home.html sebagai index.html agar bisa langsung diakses
           cp home.html index.html
 
-          # Buat login.html yang redirect ke home.html
+          # Buat login.html redirect ke home.html
           echo '<!DOCTYPE html>
           <html>
             <head>
@@ -55,5 +51,4 @@ jobs:
             </body>
           </html>' > login.html
 
-          # Set permission agar bisa diakses web server
           chmod -R 755 /var/www/html/cicd/aldo
