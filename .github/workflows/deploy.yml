@@ -40,5 +40,20 @@ jobs:
             git pull origin main
           fi
 
+          # Salin home.html sebagai index.html agar bisa diakses otomatis dari root folder
+          cp home.html index.html
+
+          # Buat login.html yang redirect ke home.html
+          echo '<!DOCTYPE html>
+          <html>
+            <head>
+              <meta http-equiv="refresh" content="0; url=home.html" />
+              <title>Redirecting...</title>
+            </head>
+            <body>
+              <p>Redirecting to <a href="home.html">home.html</a></p>
+            </body>
+          </html>' > login.html
+
           # Set permission agar bisa diakses web server
           chmod -R 755 /var/www/html/cicd/aldo
