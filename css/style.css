@@ -1,0 +1,68 @@
+body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .nav-link {
+    margin-left: 15px;
+  }
+  
+  footer h5 {
+    margin-bottom: 1rem;
+  }
+  
+  footer a {
+    text-decoration: none;
+  }
+  
+  input[type="email"] {
+    max-width: 200px;
+  }
+  
+  .hero-section {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  .hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .features-section {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .feature-box i {
+    color: #10b981; /* Warna ikon hijau seperti di gambar */
+  }
+  
+  .feature-box h5 {
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .feature-box p {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .about-section ul li {
+    font-size: 16px;
+  }
+  .about-section h2 {
+    color: #111;
+  }
+  .about-section p {
+    font-size: 15px;
+  }
+  
